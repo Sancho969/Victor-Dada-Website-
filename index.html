@@ -136,11 +136,12 @@
 
   <!-- Contact Form -->
   <form id="contactForm">
-    <input type="text" id="name" placeholder="Your Name" required><br>
-    <input type="email" id="email" placeholder="Your Email" required><br>
-    <textarea id="message" placeholder="Your Message" required></textarea><br>
-    <button type="submit">Submit</button>
-  </form>
+  <input type="text" name="name" placeholder="Your Name" required><br>
+  <input type="email" name="email" placeholder="Your Email" required><br>
+  <textarea name="message" placeholder="Your Message" required></textarea><br>
+  <button type="submit">Submit</button>
+</form>
+
   <p id="formMessage" style="color: green; display: none;">Thank you for contacting us!</p>
 </section>
 
@@ -182,6 +183,26 @@ function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
 }
 </script>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+  // Initialize EmailJS with your Public Key (replace with your actual Public Key)
+  emailjs.init('PHRzf6HvJtCOh-FvL');  // Replace this with your Public Key
 
+  // Handle form submission
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();  // Prevent the form from submitting the default way
+
+    // Send form data to your email using EmailJS
+    emailjs.sendForm('service_4mgdz82', 'template_98d4y8u', this)  // Replace with your Service ID and Template ID
+      .then(function (response) {
+        console.log('SUCCESS!', response);
+        alert("Thank you for contacting us! We'll get back to you soon.");
+      }, function (error) {
+        console.log('FAILED...', error);
+        alert("Something went wrong. Please try again.");
+      });
+  });
+</script>
 </body>
 </html>
+
