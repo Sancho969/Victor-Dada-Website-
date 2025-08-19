@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Victor Aduragbemi Dada</title>
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+            color: #ccc;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav {
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #555;
+        }
+        nav a {
+            color: #ccc;
+            margin-right: 20px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        nav a:hover {
+            color: white;
+        }
+        .flag {
+            margin-left: auto;
+        }
+        .flag img {
+            width: 30px;
+            height: auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        header h1 {
+            font-size: 32px;
+            color: #aaa;
+            margin: 0;
+        }
+        .flags {
+        display: flex;
+        gap: 10px;
+    }
+
+    .flag {
+        width: 30px;
+        height: auto;
+    }
+    centered-image {
+    display: block;
+    margin: 30px auto;
+    width: 300px;
+    border-radius: 10px; /* Optional: rounded corners */
+    outline: none;
+    border: none;
+  }
+    </style>
+</head>
+<body>
+
+ <nav>
+  <a href="#" onclick="showSection('home')">Home</a>
+  <a href="#" onclick="showSection('biography')">Biography</a>
+  <a href="#" onclick="showSection('media')">Media</a>
+  <a href="#" onclick="showSection('pictures')">Pictures</a>
+  <a href="#" onclick="showSection('contact')">Contact</a>
+</nav>
+<div id="home" class="content-section">
+    <header>
+        <h1>Victor Aduragbemi Dada</h1>
+    </header>
+<img src="Victor Adura.jpg" alt="Victor Aduragbemi Dada" width="500">
+</div>
+<div id="biography" class="content-section" style="display:none;">
+  <p>
+    Victor Dada is a talented pianist and trumpeter known for his deep groove and expressive performances. 
+    Born and raised in Ondo State, Nigeria, he began playing music at a young age and has since developed to be a talented Musician
+  </p>
+</div>
+<div id="media" class="content-section" style="display:none;">
+  <p>
+    Victor Dada is a talented pianist and trumpeter known for his deep groove and expressive performances. 
+    Born and raised in Ondo State, Nigeria, he began playing music at a young age and has since developed to be a talented Musician
+  </p>
+</div>
+<script>
+function showSection(id) {
+  // Hide all sections
+  document.querySelectorAll('.content-section').forEach(section => {
+    section.style.display = 'none';
+  });
+  // Show the clicked section
+  document.getElementById(id).style.display = 'block';
+}
+</script>
+</body>
+</html>
