@@ -64,6 +64,35 @@
     outline: none;
     border: none;
   }
+        .contact-section {
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9; /* Optional: for background */
+  border-radius: 8px;         /* Optional: rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
+}
+
+.contact-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  color: #555;
+  font-size: 16px;
+}
+
+.contact-section a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
     </style>
 </head>
 <body>
@@ -93,6 +122,14 @@
     
   </p>
 </div>
+<section id="contact" class="contact-section" style="display:none;text-align: center;">
+  <h2>Contact Information</h2>
+  <p><strong>Address:</strong> 196 Tudor Road, Leicester, Leicestershire, United Kingdom</p>
+  <p><strong>Email:</strong> <a href="mailto:oluvictor32@gmail.com">oluvictor32@gmail.com</a></p>
+  <p><strong>Phone:</strong> <a href="tel:+44-07752420569">(+44) 07752420569</a></p>
+</section>
+
+    
 <script>
 function showSection(id) {
   // Hide all sections
@@ -105,4 +142,5 @@ function showSection(id) {
 </script>
 </body>
 </html>
+
 
