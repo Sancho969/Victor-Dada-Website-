@@ -48,99 +48,140 @@
             margin: 0;
         }
         .flags {
-        display: flex;
-        gap: 10px;
-    }
-
-    .flag {
-        width: 30px;
-        height: auto;
-    }
-    centered-image {
-    display: block;
-    margin: 30px auto;
-    width: 300px;
-    border-radius: 10px; /* Optional: rounded corners */
-    outline: none;
-    border: none;
-  }
+            display: flex;
+            gap: 10px;
+        }
+        .flag {
+            width: 30px;
+            height: auto;
+        }
+        .centered-image {
+            display: block;
+            margin: 30px auto;
+            width: 300px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+        }
         .contact-section {
-  text-align: center;
-  max-width: 600px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #f9f9f9; /* Optional: for background */
-  border-radius: 8px;         /* Optional: rounded corners */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: shadow effect */
-}
-
-.contact-section h2 {
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.contact-section p {
-  color: #555;
-  font-size: 16px;
-}
-
-.contact-section a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.contact-section a:hover {
-  text-decoration: underline;
-}
-
+            text-align: center;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .contact-section p {
+            color: #555;
+            font-size: 16px;
+        }
+        .contact-section a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
     </style>
 </head>
 <body>
 
- <nav>
+<!-- Navigation Bar -->
+<nav>
   <a href="#" onclick="showSection('home')">Home</a>
   <a href="#" onclick="showSection('biography')">Biography</a>
   <a href="#" onclick="showSection('media')">Media</a>
   <a href="#" onclick="showSection('pictures')">Pictures</a>
   <a href="#" onclick="showSection('contact')">Contact</a>
+  <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
 </nav>
+
+<!-- Home Section -->
 <div id="home" class="content-section">
     <header>
         <h1>Victor Aduragbemi Dada</h1>
     </header>
-<img src="Victor Adura.jpg" alt="Victor Aduragbemi Dada" width="500">
+    <img src="Victor Adura.jpg" alt="Victor Aduragbemi Dada" class="centered-image">
 </div>
-<div id="biography" class="content-section" style="display:none;text-align: center;">
-  <p>Victor Dada is a Nigerian-born music and computing student. He completed his primary education at Calvary International School before attending Preston International School for secondary education, where he earned a preliminary grade from Muson, Nigeria’s music board. 
-    While at Preston, Victor was an active member of the school choir and brass band, which performed “Fairy Odd Parent (Timmy Turner)” as the final presentation for the graduating class of 2020/21. After secondary school, he enrolled in a graphic design course, gaining skills in Adobe Photoshop, Illustrator, and CorelDRAW. 
-    Victor later moved to the UK with his family to pursue computer science studies, completing a BTEC Level 3 Extended Certificate and a National Diploma in Computing. He has recently gained admission to study computer science at the University of Derby. Victor began playing piano at age seven and discovered his passion for the trumpet during his time at Preston, practicing diligently ever since. 
-    In December 2024, he performed “O Thou That Tellest” as an accompanist, and on August 17, 2025, he played first trumpet in the brass presentation titled “America Patrol.” You can view some of his pictures in the Pictures tab and watch videos in the Media tab.
-  </p>
+
+<!-- Biography Section -->
+<div id="biography" class="content-section" style="display:none;">
+  <p>Victor Dada is a Nigerian-born music and computing student.
+      He completed his primary education at Calvary International School before attending Preston International School for secondary education, where he earned a preliminary grade from Muson, Nigeria’s music board. While at Preston, Victor was an active member of the school choir and brass band, which performed “Fairy Odd Parent (Timmy Turner)” as the final presentation for the graduating class of 2020/21. After secondary school, he enrolled in a graphic design course, gaining skills in Adobe Photoshop, Illustrator, and CorelDRAW. Victor later moved to the UK with his family to pursue computer science studies, completing a BTEC Level 3 Extended Certificate and a National Diploma in Computing. He has recently gained admission to study computer science at the University of Derby. Victor began playing piano at age seven and discovered his passion for the trumpet during his time at Preston, practicing diligently ever since. 
+      In December 2024, he performed “O Thou That Tellest” as an accompanist, and on August 17, 2025, he played first trumpet in the brass presentation titled “America Patrol.”
+      You can view some of his pictures in the Pictures tab and watch videos in the Media tab.</p>
 </div>
+
+<!-- Media Section -->
 <div id="media" class="content-section" style="display:none;">
-  <p>
-    
-  </p>
+  <p>Media content will go here.</p>
 </div>
-<section id="contact" class="contact-section" style="display:none;text-align: center;">
+
+<!-- Contact Section with Form -->
+<section id="contact" class="contact-section" style="display:none;">
   <h2>Contact Information</h2>
   <p><strong>Address:</strong> 196 Tudor Road, Leicester, Leicestershire, United Kingdom</p>
   <p><strong>Email:</strong> <a href="mailto:oluvictor32@gmail.com">oluvictor32@gmail.com</a></p>
   <p><strong>Phone:</strong> <a href="tel:+44-07752420569">(+44) 07752420569</a></p>
+
+  <!-- Contact Form -->
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="email" id="email" placeholder="Your Email" required><br>
+    <textarea id="message" placeholder="Your Message" required></textarea><br>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="formMessage" style="color: green; display: none;">Thank you for contacting us!</p>
 </section>
 
-    
 <script>
+// Smooth Scrolling for navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Form validation for contact form
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  if (name && email && message) {
+    document.getElementById('formMessage').style.display = 'block';
+    document.getElementById('contactForm').reset();
+  } else {
+    alert('Please fill in all fields.');
+  }
+});
+
+// Show sections
 function showSection(id) {
-  // Hide all sections
   document.querySelectorAll('.content-section').forEach(section => {
     section.style.display = 'none';
   });
-  // Show the clicked section
   document.getElementById(id).style.display = 'block';
 }
+
+// Dark mode toggle
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+}
 </script>
+
 </body>
 </html>
-
-
