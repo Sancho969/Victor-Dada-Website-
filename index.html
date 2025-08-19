@@ -193,17 +193,21 @@ function toggleDarkMode() {
     e.preventDefault();  // Prevent the form from submitting the default way
 
     // Send form data to your email using EmailJS
-    emailjs.sendForm('service_4mgdz82', 'template_98d4y8u', this)  // Replace with your Service ID and Template ID
+    emailjs.sendForm('service_8we21yj', 'template_98d4y8u', this)  // Replace with your Service ID and Template ID
       .then(function (response) {
           console.log('SUCCESS!', response);
     alert("Thank you for contacting us! We'll get back to you soon.");
-  }, function(error) {
-    console.log('FAILED...', error);
-    alert("Something went wrong. Please try again.");
+   // Reset form fields and hide the form after submission
+        document.getElementById('contactForm').reset();  // Reset form fields
+        document.getElementById('contactForm').style.display = 'none';  // Hide the form
+      }, function(error) {
+        console.log('FAILED...', error);
+        alert("Something went wrong. Please try again.");
   });
 });
 </script>
 </body>
 </html>
+
 
 
